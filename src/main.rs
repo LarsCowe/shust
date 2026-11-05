@@ -1,4 +1,8 @@
+use std::io::{self, Write};
+
 fn main() {
     print!("$ ");
-    let input: String = String::new();
+    io::stdout().flush().unwrap();
+    let mut input: String = String::new();
+    io::stdin().read_line(&mut input).unwrap();
 }
