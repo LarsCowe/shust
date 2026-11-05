@@ -1,8 +1,18 @@
 use std::io::{self, Write};
 
 fn main() {
-    print!("$ ");
-    io::stdout().flush().unwrap();
     let mut input: String = String::new();
-    io::stdin().read_line(&mut input).unwrap();
+
+    loop {
+        input.clear();
+        print!("$ ");
+        io::stdout().flush().unwrap();
+
+        let bytes_read = io::stdin().read_line(&mut input).unwrap();
+
+        if bytes_read == 0 {
+            println!();
+            break;
+        }
+    }
 }
