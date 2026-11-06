@@ -14,5 +14,11 @@ fn main() {
             println!();
             break;
         }
+
+        let trimmed_input = input.trim();
+        if trimmed_input.is_empty() {
+            continue;
+        }
+        println!("{trimmed_input}");
     }
 }
